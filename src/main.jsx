@@ -1,3 +1,13 @@
-const root = document.querySelector('#root');
+import { createRoot } from "react-dom/client";
+import App from "./components/App.jsx";
 
-root.textContent = 'React startet gleich ...';
+
+const rootElement = document.querySelector("#root");
+const root = createRoot(rootElement);
+
+const courseTitle = "Frontend Development";
+const participants = 5;
+
+root.render(
+    <App />
+);
