@@ -25,10 +25,10 @@ main {
 }
 
 .course-list,
-.event-card {
+.event-list {
   display: grid;
   gap: 1rem;
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem;
 }
 
 .course-card,
@@ -40,18 +40,26 @@ main {
   border-radius: 0.5rem;
   background: white;
 }
- 
 
 .info-box {
-    border: 1px solid #ccc;
-    border-left: 4px solid #555;
+  border: 1px solid #ccc;
+  border-left: 4px solid #555;
 }
 
 .notice {
-    border: 1px solid #999;
-    margin-bottom: 1.5rem;
+  border: 1px solid #999;
+  border-left: 4px solid transparent;
+  margin-bottom: 1.5rem;
+}
+
+.notice-info {
+  border-left-color: steelblue;
+}
+
+.notice-warning {
+  border-left-color: darkorange;
 }
 
 .course-card {
-    border: 1px solid #ddd;
+  border: 1px solid #ddd;
 }
