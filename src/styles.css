@@ -60,6 +60,12 @@ main {
   border-left-color: darkorange;
 }
 
-.course-card {
-  border: 1px solid #ddd;
+button {
+  display: block;
+  padding: 0.5rem 0.75rem;
+  border: 0;
+  border-radius: 0.375rem;
+  cursor: pointer;
+  margin: 1rem 0;
+  justify-self: start;
 }
