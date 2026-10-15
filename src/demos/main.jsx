@@ -6,11 +6,12 @@ import Counter from "./components/Counter";
 import Toggle from "./components/Toggle";
 import NameInput from "./components/NameInput";
 import LikeButton from "./components/LikeButton";
+import PriceCalculator from "./components/PriceCalculator";
 
 const rootElement = document.querySelector("#root");
 const root = createRoot(rootElement);
 
 
 root.render(
-    <LikeButton />
+    <PriceCalculator />
 );
