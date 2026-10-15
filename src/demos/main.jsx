@@ -7,11 +7,12 @@ import Toggle from "./components/Toggle";
 import NameInput from "./components/NameInput";
 import LikeButton from "./components/LikeButton";
 import PriceCalculator from "./components/PriceCalculator";
+import BookingForm from "./components/BookingForm";
 
 const rootElement = document.querySelector("#root");
 const root = createRoot(rootElement);
 
 
 root.render(
-    <PriceCalculator />
+    <BookingForm />
 );
