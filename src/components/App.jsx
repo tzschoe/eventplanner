@@ -2,6 +2,7 @@ import Header from "./Header";
 import Footer from "./Footer";
 import EventList from "./EventList";
 import Notice from "./Notice";
+import RegistrationManager from "./RegistrationManager";
 
 export default function App() {
   return (
@@ -10,6 +11,7 @@ export default function App() {
 
       <main>
         <EventList />
+        <RegistrationManager />
         <Notice type="warning">
             <p>Für diese Veranstaltung sind nur noch wenige Plätze frei.</p>
         </Notice>

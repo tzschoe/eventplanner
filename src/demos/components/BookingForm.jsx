@@ -1,17 +1,22 @@
 import { useState } from "react";
 
 function BookingForm() {
-    const [name, setName] = useState("");
-    const [email, setEmail] = useState("");
-    const [participants, setParticipants] = useState(1);
-    const [phone, setPhone] = useState("");
+    const [formData, setFormData] = useState({name: "", email: "", phone: "", participants: 1});
     const [error, setError] = useState("");
     const [successBooking, setSuccessBooking] = useState(null);
     
+    function handleChange(event) {
+        const { name, value } = event.target;
+        const newValue = name === "participants" ? Number(value) : value;
+        setFormData({...formData, [name]: newValue});
+    }
+
     function handleSubmit(event){
         event.preventDefault();
         setError("");
         setSuccessBooking(null);
+
+        const { name, email, phone, participants } = formData;
 
 
         if(name.trim() === "") {
@@ -41,14 +46,10 @@ function BookingForm() {
 
 
         setSuccessBooking({name, participants, phone});
-
-        setName("");
-        setEmail("");
-        setParticipants(1);
-        setPhone("");
-
-
         console.log({name, email, participants, phone});
+
+        setFormData({name: "", email: "", phone: "", participants: 1});
+
     }
 
     return(
@@ -60,22 +61,22 @@ function BookingForm() {
         <form onSubmit={handleSubmit} noValidate>
             <div>
                 <label htmlFor="name">Name</label>{" "}
-                <input type="text" id="name" value={name} onChange={(event) => setName(event.target.value)} />
+                <input type="text" id="name" name="name" value={formData.name} onChange={handleChange} />
             </div>
 
             <div>
                 <label htmlFor="email">Email</label>{" "}
-                <input type="email" id="email" value={email} onChange={(event) => setEmail(event.target.value)} />
+                <input type="email" id="email" name="email" value={formData.email} onChange={handleChange} />
             </div>
 
             <div>
                 <label htmlFor="phone">Telefon</label>{" "}
-                <input type="tel" id="phone" value={phone} onChange={(event) => setPhone(event.target.value)} />
+                <input type="tel" id="phone" name="phone" value={formData.phone} onChange={handleChange} />
             </div>
 
             <div>
                 <label htmlFor="participants">Teilnehmer</label>{" "}
-                <input type="number" id="participants" value={participants} onChange={(event) => setParticipants(event.target.value)} />
+                <input type="number" id="participants" name="participants" value={formData.participants} onChange={handleChange} />
             </div>
 
             <button type="submit">Buchen</button>
